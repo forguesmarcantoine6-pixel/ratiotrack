@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60D03M0RFH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-60D03M0RFH');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Guide des ratios financiers | RatioTrack</title>
+<meta name="description" content="Guide des ratios financiers pour comprendre leur calcul, leur signification et leur utilité dans l’analyse financière d’une entreprise.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+      body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F5F7FA;
+      color: #334155;
+      -webkit-font-smoothing: antialiased;
+      }
+      /* Hide number input spinners */
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      input[type=number] {
+      -moz-appearance: textfield;
+      }
+      @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+      }
+      /* Custom subtle scrollbar for input panel */
+      .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="index.html" class="text-xl font-semibold tracking-tighter text-[#1F3A5F]">
+          RatioTrack
+        </a>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="nav-btn text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          Accueil
+        </a>
+        <a href="calculatrice.html" class="nav-btn text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          Calculatrice
+        </a>
+        <a href="guide-ratio-financier.html" class="nav-btn text-sm text-[#1F3A5F] font-semibold hover:text-[#1F3A5F] transition-colors">
+          Guide
+        </a>
+        <a href="a-propos.html" class="nav-btn text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          À propos
+        </a>
+        <a href="contact.html" class="nav-btn text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          Contact
+        </a>
+        <a href="ratiotrack+.html" class="nav-btn text-sm hover:text-[#1F3A5F] transition-colors text-[#1F3A5F] font-semibold">
+          RatioTrack +
+        </a>
+<div class="flex items-center bg-slate-100 border border-slate-200 rounded-full px-2 py-1 gap-1">
+  
+  <a href="financial-ratio-guide.html"
+     class="text-xs px-3 py-1 rounded-full text-slate-500 hover:text-[#1F3A5F] transition">
+    EN
+  </a>
+
+  <a href="guide-ratio-financier.html"
+     class="text-xs px-3 py-1 rounded-full bg-white text-[#1F3A5F] shadow-sm font-semibold">
+    FR
+  </a>
+
+</div>
+      </div>
+
+      <div class="flex items-center">
+        <a href="calculatrice.html" class="bg-[#1F3A5F] text-white text-sm font-medium px-4 py-2 rounded-md hover:opacity-90 transition-opacity flex items-center gap-2">
+          <iconify-icon icon="solar:calculator-linear" stroke-width="1.5"></iconify-icon>
+          <span class="hidden sm:inline">Lancez l'application</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow w-full">
+
+<!-- 3. EDUCATIONAL GUIDE -->
+      <section id="guide">
+        <div class="max-w-3xl mx-auto px-4 py-16 sm:py-24">
+          <div class="mb-12">
+            <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1F3A5F] mb-4">
+  Ratios financiers : définition, calcul et interprétation
+</h1>
+<p class="text-base text-slate-500 leading-relaxed mb-12 max-w-3xl">
+  Comprenez ce que signifie chaque ratio, comment il est calculé et pourquoi il est important pour l’analyse d’entreprise. Utilisez ce guide pour interpréter les résultats de votre tableau de bord.
+</p>
+
+          </div>
+
+          <div class="space-y-12">
+            <!-- Liquidity -->
+            <div>
+              <h2 class="text-xl font-semibold tracking-tight text-slate-800 mb-6 pb-2 border-b border-slate-200">
+                Ratios de liquidité
+              </h2>
+              <div class="space-y-6">
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Fond de roulement
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    Actif court terme ÷ passif court terme
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Mesure la capacité d’une entreprise à faire face à ses obligations à court terme à l’aide de ses actifs à court terme.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Un ratio plus élevé indique une meilleure stabilité financière à court terme, tandis qu’un ratio inférieur à 1 peut
+                    signaler des problèmes de liquidité.
+                  </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Liquidité immédiate
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    Encaisse + Placements temporaires + Clients ÷ passif court terme
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Évalue la capacité d’une entreprise à faire face à ses passifs à court terme en utilisant uniquement ses actifs les plus
+                    liquides.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Puisqu’il exclut les stocks, il offre une mesure plus stricte de la liquidité.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Leverage -->
+            <div>
+              <h2 class="text-xl font-semibold tracking-tight text-slate-800 mb-6 pb-2 border-b border-slate-200">
+                Ratios de structure financière
+              </h2>
+              <div class="space-y-6">
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Ratio d'endettement
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    (Passif total ÷ Actif total) x 100
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Indique la proportion des actifs d’une entreprise financés par la dette.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Un ratio d’endettement plus élevé indique un risque financier accru en raison d’une dépendance plus importante aux fonds
+                    empruntés.
+                  </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Ratio d'autonomie financière
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    Passif total ÷ Capitaux propres
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Compare le financement par la dette aux capitaux propres des actionnaires.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Il permet d’évaluer l’effet de levier financier et la solvabilité à long terme d’une entreprise.
+                  </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Ratio d'effet de levier
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    Actif total ÷ Capitaux propres
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Indique dans quelle proportion les actifs d’une entreprise sont financés par les capitaux propres par rapport à la
+                    dette.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Un multiplicateur plus élevé indique une plus grande utilisation du financement par la dette.
+                  </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Ratio de couverture des intérêts
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    (Résultat avant impôts + Charges d’intérêts) ÷ Charges d'intérêts
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Mesure la capacité d’une entreprise à payer les intérêts sur sa dette en cours.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Un ratio plus élevé indique une meilleure capacité à faire face aux obligations liées à la dette.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Efficiency -->
+            <div>
+              <h2 class="text-xl font-semibold tracking-tight text-slate-800 mb-6 pb-2 border-b border-slate-200">
+                Ratios de gestion
+              </h2>
+              <div class="space-y-6">
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Délai moyen de recouvrement comptes clients
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    (Clients ÷ Ventes à crédit) x 365
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Indique le nombre moyen de jours nécessaires pour encaisser les paiements des clients.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Des délais de recouvrement plus courts indiquent une meilleure gestion des flux de trésorerie.
+                  </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Délai moyen de paiement comptes fournisseurs
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    (Fournisseurs ÷ Achats nets à crédit) x 365
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Mesure le nombre moyen de jours qu’une entreprise met à payer ses fournisseurs.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Cela permet d’évaluer les politiques de paiement et les relations avec les fournisseurs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Profitability -->
+            <div>
+              <h2 class="text-xl font-semibold tracking-tight text-slate-800 mb-6 pb-2 border-b border-slate-200">
+                Ratios de rentabilité
+              </h2>
+              <div class="space-y-6">
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Marge bénéficiaire brute
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    (Marge bénéficiaire brute ÷ Ventes nettes) x 100
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Indique le pourcentage des revenus restant après déduction du coût des marchandises vendues.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Indique avec quelle efficacité une entreprise produit ou vend ses produits.
+                  </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Marge nette
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    (Résultat net ÷ Ventes nettes) x 100
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Indique combien de profit reste pour chaque dollar de revenus.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Reflète la rentabilité globale et la gestion des coûts.
+                  </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Rendement de l'actif total
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    (Résultat net ÷ Actif total) x 100
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Mesure l’efficacité avec laquelle une entreprise utilise ses actifs pour générer du profit.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Un ROA plus élevé indique une meilleure utilisation des actifs.
+                  </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg p-6">
+                  <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+                    Rendement du capital
+                  </h3>
+                  <div class="text-xs font-mono bg-slate-50 px-3 py-2 rounded border border-slate-100 mb-3 inline-block text-slate-600">
+                    (Résultat net ÷ Capitaux propres) x 100
+                  </div>
+                  <p class="text-sm text-slate-600 mb-2">
+                    <strong class="font-medium text-slate-800">
+                      Ce qu’il mesure :
+                    </strong>
+                    Indique le rendement généré sur l’investissement des actionnaires.
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    <strong class="font-medium text-slate-800">
+                      Pourquoi c’est important :
+                    </strong>
+                    Permet d’évaluer dans quelle mesure la direction utilise efficacement le capital des investisseurs.
+                  </p>
+                </div>
+              <h2 class="text-xl font-semibold tracking-tight text-slate-800 mb-6 pb-2 border-b border-slate-200">
+                Information supplémentaire
+              </h2>
+              <div class="space-y-6">
+<!-- SECTION 1 -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-sm p-8 md:p-10 mb-10">
+
+  <h2 class="text-xl md:text-1xl font-semibold tracking-tight text-[#1F3A5F] mb-4">
+    Comment analyser les ratios financiers
+  </h2>
+
+  <p class="text-slate-600 leading-relaxed mb-4">
+    L’analyse des ratios financiers permet de comprendre la santé financière d’une entreprise en évaluant sa liquidité, sa rentabilité et sa structure financière.
+  </p>
+
+  <p class="text-slate-600 leading-relaxed">
+    Pour être pertinente, cette analyse doit toujours être faite dans le temps, comparée au secteur et interprétée dans le contexte spécifique de l’entreprise.
+  </p>
+
+</div>
+
+<!-- SECTION 2 -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-sm p-8 md:p-10 mb-10">
+
+  <h2 class="text-xl md:text-1xl font-semibold tracking-tight text-[#1F3A5F] mb-4">
+    Quels ratios financiers utiliser selon votre entreprise
+  </h2>
+
+  <p class="text-slate-600 leading-relaxed mb-4">
+    Les ratios financiers à utiliser varient selon le type d’entreprise, son secteur et ses objectifs.
+  </p>
+
+  <ul class="list-disc pl-6 text-slate-600 space-y-1">
+    <li>Ratios de liquidité pour les PME</li>
+    <li>Ratios d’endettement pour les entreprises en croissance</li>
+    <li>Ratios de gestion pour optimiser les opérations</li>
+    <li>Ratios de rentabilité pour mesurer la performance</li>
+  </ul>
+
+</div>
+
+<!-- SECTION 3 -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-sm p-8 md:p-10 mb-10">
+
+  <h2 class="text-xl md:text-1xl font-semibold tracking-tight text-[#1F3A5F] mb-4">
+    Exemple concret d’analyse de ratios financiers
+  </h2>
+
+  <p class="text-slate-600 leading-relaxed mb-4">
+    Prenons l’exemple d’une entreprise générant 500 000 $ de revenus avec un bénéfice net de 60 000 $.
+  </p>
+
+  <p class="text-slate-600 leading-relaxed">
+    En analysant ses ratios de rentabilité, de liquidité et d’endettement, il est possible d’identifier ses forces et les points à améliorer.
+  </p>
+
+</div>
+              </div>
+            </div>
+          </div>
+<div class="flex justify-center mt-10">
+  <a href="calculatrice.html" class="bg-[#1F3A5F] text-white text-base font-medium px-6 py-3 rounded-md hover:opacity-90 transition-all flex items-center justify-center gap-2">
+    Commencez à calculer vos ratios
+<iconify-icon icon="solar:calculator-linear" stroke-width="1.5"></iconify-icon>
+  </a>
+        </div>
+      </section>
+<footer class="bg-white border-t border-slate-200 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
+      
+      <div class="flex flex-col items-center md:items-start">
+        <span class="text-lg font-semibold tracking-tighter text-[#1F3A5F] mb-2">
+          RatioTrack
+        </span>
+        <p class="text-xs text-slate-400 max-w-xs text-center md:text-left">
+          Cet outil fournit des informations financières générales et ne doit pas être considéré comme un conseil financier ou en investissement.
+        </p>
+      </div>
+<div class="max-w-4xl mx-auto mt-10 text-center">
+
+  <p class="text-sm text-slate-500 mb-4">
+    Vous voulez aller plus loin dans votre analyse financière ?
+  </p>
+
+  <a href="ratiotrack+.html"
+     class="inline-flex items-center gap-2 bg-[#1F3A5F] text-white text-sm font-medium px-5 py-3 rounded-md hover:opacity-90 transition-all">
+     
+    Passer au prochain niveau🔥
+  </a>
+
+</div>
+
+      <div class="flex gap-8 text-sm">
+
+
+        <!-- PRODUIT -->
+        <div class="flex flex-col gap-2 items-center md:items-start">
+          <span class="font-medium text-slate-800 text-xs tracking-wider uppercase">
+            Produit
+          </span>
+
+          <a href="calculatrice.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Calculatrice
+          </a>
+
+          <a href="guide-ratio-financier.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Guide
+          </a>
+        </div>
+
+        <!-- LÉGAL -->
+        <div class="flex flex-col gap-2 items-center md:items-start">
+          <span class="uppercase text-xs font-medium text-slate-800 tracking-wider">
+            Légal
+          </span>
+
+          <a href="politique-confidentialite.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Politique de confidentialité
+          </a>
+
+          <a href="conditions-utilisation.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Conditions d’utilisation
+          </a>
+
+          <a href="clause-non-responsabilite.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Clause de non-responsabilité
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="text-xs text-slate-400 text-center border-slate-100 border-t mt-10 pt-6">
+      © 2026 RatioTrack. Tous droits réservés.
+    </div>
+  </div>
+</footer>

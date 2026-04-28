@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60D03M0RFH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-60D03M0RFH');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Calculatrice de ratios financiers | RatioTrack</title>
+<meta name="description" content="Calculatrice de ratios financiers. Analysez la liquidité, la rentabilité et la structure financière de votre entreprise avec RatioTrack.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+      body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F5F7FA;
+      color: #334155;
+      -webkit-font-smoothing: antialiased;
+      }
+      /* Hide number input spinners */
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      input[type=number] {
+      -moz-appearance: textfield;
+      }
+      @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+      }
+      /* Custom subtle scrollbar for input panel */
+      .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center cursor-pointer">
+            <a href="index.html" class="text-xl font-semibold tracking-tighter text-[#1F3A5F]">
+  RatioTrack
+</a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+  <a href="index.html" class="nav-btn text-sm hover:text-[#1F3A5F] transition-colors text-[#1F3A5F] font-semibold">
+    Accueil
+  </a>
+  <a href="calculatrice.html" class="nav-btn text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+    Calculatrice
+  </a>
+  <a href="guide-ratio-financier.html" class="nav-btn text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+    Guide
+  </a>
+  <a href="a-propos.html" class="nav-btn text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+    À propos
+  </a>
+  <a href="contact.html" class="nav-btn text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+    Contact
+  </a>
+  <a href="ratiotrack+.html" class="nav-btn text-sm hover:text-[#1F3A5F] transition-colors text-[#1F3A5F] font-semibold">
+    RatioTrack +
+  </a>
+<div class="flex items-center bg-slate-100 border border-slate-200 rounded-full px-2 py-1 gap-1">
+  
+  <a href="home.html"
+     class="text-xs px-3 py-1 rounded-full text-slate-500 hover:text-[#1F3A5F] transition">
+    EN
+  </a>
+
+  <a href="index.html"
+     class="text-xs px-3 py-1 rounded-full bg-white text-[#1F3A5F] shadow-sm font-semibold">
+    FR
+  </a>
+
+</div>
+</div>
+          <div class="flex items-center">
+  <a href="calculatrice.html" class="bg-[#1F3A5F] text-white text-sm font-medium px-4 py-2 rounded-md hover:opacity-90 transition-opacity flex items-center gap-2">
+    <iconify-icon icon="solar:calculator-linear" stroke-width="1.5"></iconify-icon>
+    <span class="hidden sm:inline">Lancez l'application</span>
+  </a>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow w-full">
+      <!-- 1. HOMEPAGE -->
+      <section>
+        <!-- Hero -->
+        <div class="sm:px-6 lg:px-8 lg:py-32 flex flex-col text-center max-w-7xl mr-auto ml-auto pt-20 pr-4 pb-20 pl-4 items-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-medium text-[#1F3A5F] mb-8">
+            <iconify-icon icon="solar:chart-square-linear"></iconify-icon>
+            Analyse des ratios financiers pour PME
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#1F3A5F] max-w-4xl mb-6">
+  Calculatrice de ratios financiers
+</h1>
+        <p class="text-base md:text-lg text-slate-500 max-w-2xl mb-10 leading-relaxed">
+            RatioTrack vous aide à calculer et interpréter des ratios financiers clés pour
+            mieux comprendre la liquidité, la structure financière, la gestion et la rentabilité, sans le désordre des tableurs.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+  <a href="calculatrice.html" class="bg-[#1F3A5F] text-white text-base font-medium px-6 py-3 rounded-md hover:opacity-90 transition-all flex items-center justify-center gap-2">
+    Commencez à calculer vos ratios
+  </a>
+
+  <a href="guide-ratio-financier.html" class="bg-white text-slate-700 border border-slate-200 text-base font-medium px-6 py-3 rounded-md hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+    Lire le Guide 📖
+  </a>
+</div>
+
+
+          <!-- Abstract Dashboard Preview -->
+          <div class="mt-16 w-full max-w-4xl bg-white border border-slate-200 rounded-xl shadow-sm p-8 md:p-12 text-left flex flex-col">
+
+  <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-[#1F3A5F] mb-6 text-center md:text-left">
+    Qu’est-ce que les ratios financiers ?
+  </h2>
+
+  <div class="space-y-4 text-base text-slate-600 leading-relaxed mb-10 text-center md:text-left">
+    <p>
+      Les ratios financiers sont des outils d’analyse utilisés pour évaluer la performance financière et la stabilité d’une entreprise. Ils sont calculés à partir des informations provenant des états financiers, tels que le bilan et l’état des résultats.
+    </p>
+    <p>
+      En comparant des données financières clés, les ratios permettent d’identifier les forces et les faiblesses dans des domaines tels que la liquidité, la rentabilité, la structure financière et l’efficacité opérationnelle.
+    </p>
+    <p>
+      Les entreprises, les investisseurs et les analystes financiers utilisent couramment ces indicateurs pour mieux comprendre la santé financière et appuyer la prise de décision.
+    </p>
+  </div>
+
+  <div class="border-t border-slate-200 pt-8 mt-2">
+    <h2 class="text-2xl md:text-3xl font-semibold text-[#1F3A5F] mb-4">
+      Comment utiliser une calculatrice de ratios financiers
+    </h2>
+
+    <div class="space-y-4 text-base text-slate-600 leading-relaxed mb-10">
+      <p>
+        Une calculatrice de ratios financiers permet d’analyser rapidement la santé financière d’une entreprise à partir de ses états financiers. Il suffit d’entrer des données comme les actifs, les passifs, les revenus et les coûts pour obtenir instantanément des indicateurs clés.
+      </p>
+
+      <p>
+        Ces ratios permettent d’évaluer la liquidité, la rentabilité, la structure financière et l’efficacité opérationnelle d’une entreprise. Ils sont utilisés autant par les entrepreneurs que par les investisseurs pour prendre des décisions éclairées.
+      </p>
+    </div>
+  </div>
+
+  <div class="border-t border-slate-200 pt-8">
+    <h2 class="text-2xl md:text-3xl font-semibold text-[#1F3A5F] mb-4">
+      Pourquoi analyser les ratios financiers de votre entreprise
+    </h2>
+
+    <div class="space-y-4 text-base text-slate-600 leading-relaxed mb-8">
+      <p>
+        L’analyse des ratios financiers permet de mieux comprendre la performance et la stabilité d’une entreprise. Elle aide à identifier les forces, les faiblesses et les risques potentiels avant qu’ils ne deviennent critiques.
+      </p>
+
+      <p>
+        Que vous soyez en démarrage, en croissance ou en phase de gestion quotidienne, les ratios financiers offrent une vision claire et structurée de votre situation financière.
+      </p>
+    </div>
+  </div>
+
+  <a href="guide-ratio-financier.html" class="bg-white text-slate-700 border border-slate-200 text-base font-medium px-6 py-3 rounded-md hover:bg-slate-50 transition-all inline-flex items-center justify-center gap-2 self-center md:self-start">
+    Apprenez en plus
+    <iconify-icon icon="solar:arrow-right-linear" stroke-width="1.5"></iconify-icon>
+  </a>
+
+</div>
+
+  </div>
+</section>
+</div>
+</div>
+
+
+        <!-- Features -->
+        <div class="bg-white border-t border-slate-200 pt-12 pb-16 mt-8 w-full">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div class="flex flex-col">
+                <div class="h-10 w-10 bg-[#F5F7FA] border border-slate-200 rounded-lg flex items-center justify-center text-[#1F3A5F] mb-5">
+                  <iconify-icon icon="solar:calculator-minimalistic-linear" class="text-xl"></iconify-icon>
+                </div>
+                <h3 class="text-lg font-semibold tracking-tight text-[#1F3A5F] mb-2">
+                  Calculatrice de ratios simple
+                </h3>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                  Calculez rapidement les ratios financiers les plus importants à partir des données de votre bilan et de votre état des résultats. Résultats instantanés, sans configuration complexe.
+                </p>
+              </div>
+              <div class="flex flex-col">
+                <div class="h-10 w-10 bg-[#F5F7FA] border border-slate-200 rounded-lg flex items-center justify-center text-[#1F3A5F] mb-5">
+                  <iconify-icon icon="solar:widget-3-linear" class="text-xl"></iconify-icon>
+                </div>
+                <h3 class="text-lg font-semibold tracking-tight text-[#1F3A5F] mb-2">
+                  Tableau de bord clair des indicateurs financiers
+                </h3>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                  Visualisez vos ratios dans un tableau de bord structuré, conçu pour offrir clarté et facilité d’analyse financière. Repérez les tendances et évaluez la santé financière en un coup d’œil.
+                </p>
+              </div>
+              <div class="flex flex-col">
+                <div class="h-10 w-10 bg-[#F5F7FA] border border-slate-200 rounded-lg flex items-center justify-center text-[#1F3A5F] mb-5">
+                  <iconify-icon icon="solar:book-bookmark-linear" class="text-xl"></iconify-icon>
+                </div>
+                <h3 class="text-lg font-semibold tracking-tight text-[#1F3A5F] mb-2">
+                  Comprendre la signification de chaque ratio
+                </h3>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                 Chaque ratio comprend une explication décrivant ce qu’il mesure et pourquoi il est important dans le contexte spécifique de votre entreprise.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+   <footer class="bg-white border-t border-slate-200 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
+      
+      <div class="flex flex-col items-center md:items-start">
+        <span class="text-lg font-semibold tracking-tighter text-[#1F3A5F] mb-2">
+          RatioTrack
+        </span>
+        <p class="text-xs text-slate-400 max-w-xs text-center md:text-left">
+          Cet outil fournit des informations financières générales et ne doit pas être considéré comme un conseil financier ou en investissement.
+        </p>
+      </div>
+<div class="max-w-4xl mx-auto mt-10 text-center">
+
+  <p class="text-sm text-slate-500 mb-4">
+    Vous voulez aller plus loin dans votre analyse financière ?
+  </p>
+
+  <a href="ratiotrack+.html"
+     class="inline-flex items-center gap-2 bg-[#1F3A5F] text-white text-sm font-medium px-5 py-3 rounded-md hover:opacity-90 transition-all">
+     
+   Passer au prochain niveau🔥
+  </a>
+
+</div>
+
+      <div class="flex gap-8 text-sm">
+
+
+        <!-- PRODUIT -->
+        <div class="flex flex-col gap-2 items-center md:items-start">
+          <span class="font-medium text-slate-800 text-xs tracking-wider uppercase">
+            Produit
+          </span>
+
+          <a href="calculatrice.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Calculatrice
+          </a>
+
+          <a href="guide-ratio-financier.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Guide
+          </a>
+        </div>
+
+        <!-- LÉGAL -->
+        <div class="flex flex-col gap-2 items-center md:items-start">
+          <span class="uppercase text-xs font-medium text-slate-800 tracking-wider">
+            Légal
+          </span>
+
+          <a href="politique-confidentialite.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Politique de confidentialité
+          </a>
+
+          <a href="conditions-utilisation.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Conditions d’utilisation
+          </a>
+
+          <a href="clause-non-responsabilite.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Clause de non-responsabilité
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="text-xs text-slate-400 text-center border-slate-100 border-t mt-10 pt-6">
+      © 2026 RatioTrack. Tous droits réservés.
+    </div>
+  </div>
+</footer>
+
+    <!-- JavaScript for SPA Navigation and Calculator Logic -->
+    <script>
+      // --- Navigation Logic ---
+      function navigate(viewId) {
+          // Hide all views
+          document.querySelectorAll('.view-section').forEach(el => {
+              el.classList.remove('active');
+          });
+
+          // Show target view
+          document.getElementById(viewId).classList.add('active');
+
+          // Update active state in nav
+          document.querySelectorAll('.nav-btn').forEach(btn => {
+              btn.classList.remove('text-[#1F3A5F]', 'font-semibold');
+              btn.classList.add('text-slate-500', 'font-medium');
+              if(btn.textContent.toLowerCase() === viewId) {
+                  btn.classList.remove('text-slate-500', 'font-medium');
+                  btn.classList.add('text-[#1F3A5F]', 'font-semibold');
+              }
+          });
+
+          // Scroll to top
+          window.scrollTo(0, 0);
+      }
+
+      // --- Calculator Logic ---
+
+      function getVal(id) {
+          const val = parseFloat(document.getElementById(id).value);
+          return isNaN(val) ? 0 : val;
+      }
+
+      function setHTML(id, html) {
+          document.getElementById(id).innerHTML = html;
+      }
+
+      function setIndicator(id, value, goodThreshold, badThreshold, higherIsBetter = true) {
+          const el = document.getElementById(id);
+          if (!el) return;
+
+          el.className = 'w-2 h-2 rounded-full mb-2'; // reset
+
+          if (higherIsBetter) {
+              if (value >= goodThreshold) el.classList.add('bg-[#2ECC71]');
+              else if (value <= badThreshold) el.classList.add('bg-[#E74C3C]');
+              else el.classList.add('bg-slate-300');
+          } else {
+              if (value <= goodThreshold) el.classList.add('bg-[#2ECC71]');
+              else if (value >= badThreshold) el.classList.add('bg-[#E74C3C]');
+              else el.classList.add('bg-slate-300');
+          }
+      }
+
+      function clearInputs() {
+          document.getElementById('ratio-form').reset();
+          document.getElementById('empty-state').classList.remove('hidden');
+          document.getElementById('results-grid').classList.add('hidden');
+      }
+
+      function calculateRatios() {
+          // Get Inputs
+          const cash = getVal('inp-cash');
+          const ar = getVal('inp-ar');
+          const inv = getVal('inp-inv');
+          const tca = getVal('inp-tca');
+          const ta = getVal('inp-ta');
+          const tcl = getVal('inp-tcl');
+          const tl = getVal('inp-tl');
+          const eq = getVal('inp-eq');
+
+          const rev = getVal('inp-rev');
+          const cogs = getVal('inp-cogs');
+          const op = getVal('inp-op');
+          const net = getVal('inp-net');
+
+          // Switch view state
+          document.getElementById('empty-state').classList.add('hidden');
+          document.getElementById('results-grid').classList.remove('hidden');
+
+          // --- Liquidity ---
+          // Current Ratio = TCA / TCL
+          let currentRatio = tcl > 0 ? tca / tcl : 0;
+          setHTML('res-current', currentRatio > 0 ? currentRatio.toFixed(2) + 'x' : '--');
+          setIndicator('ind-current', currentRatio, 1.5, 1.0, true);
+
+          // Quick Ratio = (Cash + AR) / TCL  (Using strict definition)
+          let quickRatio = tcl > 0 ? (cash + ar) / tcl : 0;
+          setHTML('res-quick', quickRatio > 0 ? quickRatio.toFixed(2) + 'x' : '--');
+          setIndicator('ind-quick', quickRatio, 1.0, 0.8, true);
+
+          // --- Profitability ---
+          // Gross Margin = (Rev - COGS) / Rev
+          let grossMargin = rev > 0 ? ((rev - cogs) / rev) * 100 : 0;
+          setHTML('res-gross', rev > 0 ? grossMargin.toFixed(1) + '%' : '--');
+          setIndicator('ind-gross', grossMargin, 40, 20, true);
+
+          // Net Profit Margin = Net Income / Rev
+          let netMargin = rev > 0 ? (net / rev) * 100 : 0;
+          setHTML('res-netm', rev > 0 ? netMargin.toFixed(1) + '%' : '--');
+          setIndicator('ind-netm', netMargin, 15, 5, true);
+
+          // ROA = Net Income / Total Assets
+          let roa = ta > 0 ? (net / ta) * 100 : 0;
+          setHTML('res-roa', ta > 0 ? roa.toFixed(1) + '%' : '--');
+
+          // ROE = Net Income / Equity
+          let roe = eq > 0 ? (net / eq) * 100 : 0;
+          setHTML('res-roe', eq > 0 ? roe.toFixed(1) + '%' : '--');
+
+          // --- Leverage ---
+          // Debt Ratio = Total Liabilities / Total Assets
+          let debtRatio = ta > 0 ? tl / ta : 0;
+          setHTML('res-debt', ta > 0 ? debtRatio.toFixed(2) : '--');
+          setIndicator('ind-debt', debtRatio, 0.4, 0.6, false); // Lower is better for risk
+
+          // Debt to Equity = Total Liabilities / Equity
+          let debtEq = eq > 0 ? tl / eq : 0;
+          setHTML('res-debteq', eq > 0 ? debtEq.toFixed(2) : '--');
+          setIndicator('ind-debteq', debtEq, 1.0, 2.0, false); // Lower is better
+
+          // --- Efficiency ---
+          // Asset Turnover = Revenue / Total Assets
+          let assetTurn = ta > 0 ? rev / ta : 0;
+          setHTML('res-asset', ta > 0 ? assetTurn.toFixed(2) + 'x' : '--');
+      }
+    </script>
+  
+</body></html>

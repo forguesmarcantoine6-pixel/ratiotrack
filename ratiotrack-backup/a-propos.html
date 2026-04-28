@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60D03M0RFH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-60D03M0RFH');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>À propos de RatioTrack - Calculatrice de ratios financiers</title>
+<meta name="description" content="À propos de RatioTrack, une calculatrice de ratios financiers conçue pour analyser la liquidité, la rentabilité et la structure financière des entreprises.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+      body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F5F7FA;
+      color: #334155;
+      -webkit-font-smoothing: antialiased;
+      }
+      /* Hide number input spinners */
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      input[type=number] {
+      -moz-appearance: textfield;
+      }
+      @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+      }
+      /* Custom subtle scrollbar for input panel */
+      .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="index.html" class="text-xl font-semibold tracking-tighter text-[#1F3A5F]">
+          RatioTrack
+        </a>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          Accueil
+        </a>
+        <a href="calculatrice.html" class="text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          Calculatrice
+        </a>
+        <a href="guide-ratio-financier.html" class="text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          Guide
+        </a>
+        <a href="a-propos.html" class="text-sm text-[#1F3A5F] font-semibold hover:text-[#1F3A5F] transition-colors">
+          À propos
+        </a>
+        <a href="contact.html" class="text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          Contact
+        </a>
+        <a href="ratiotrack+.html" class="nav-btn text-sm hover:text-[#1F3A5F] transition-colors text-[#1F3A5F] font-semibold">
+          RatioTrack +
+        </a>
+<div class="flex items-center bg-slate-100 border border-slate-200 rounded-full px-2 py-1 gap-1">
+  
+  <a href="about.html"
+     class="text-xs px-3 py-1 rounded-full text-slate-500 hover:text-[#1F3A5F] transition">
+    EN
+  </a>
+
+  <a href="a-propos.html"
+     class="text-xs px-3 py-1 rounded-full bg-white text-[#1F3A5F] shadow-sm font-semibold">
+    FR
+  </a>
+
+</div>
+      </div>
+
+      <div class="flex items-center">
+        <a href="calculatrice.html" class="bg-[#1F3A5F] text-white text-sm font-medium px-4 py-2 rounded-md hover:opacity-90 transition-opacity flex items-center gap-2">
+          <iconify-icon icon="solar:calculator-linear" stroke-width="1.5"></iconify-icon>
+          <span class="hidden sm:inline">Lancez l'application</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow w-full">
+
+ <!-- ABOUT / GUIDE PAGE -->
+<section id="about">
+  <div class="max-w-4xl mx-auto px-4 py-20">
+    
+    <!-- En-tête -->
+    <div class="text-center mb-14">
+      <div class="h-16 w-16 bg-white border border-slate-200 rounded-2xl flex items-center justify-center text-[#1F3A5F] mb-6 mx-auto shadow-sm">
+        <iconify-icon icon="solar:graph-up-linear" class="text-3xl"></iconify-icon>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1F3A5F] mb-4">
+        À propos de RatioTrack - Calculatrice de ratios financiers
+      </h1>
+
+      <p class="text-sm md:text-base text-slate-500 max-w-2xl mx-auto leading-relaxed">
+        RatioTrack a été conçu pour simplifier l’analyse des ratios financiers et aider les entrepreneurs,
+        étudiants et petites entreprises à mieux comprendre leur santé financière.
+      </p>
+    </div>
+
+    <!-- Intro -->
+    <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-8 md:p-10 mb-10">
+      <div class="space-y-5 text-sm md:text-base text-slate-600 leading-relaxed">
+        <p>
+          Les ratios financiers sont parmi les outils les plus utiles pour évaluer la performance d’une entreprise,
+          mais les calculer manuellement peut être long, complexe et sujet aux erreurs.
+        </p>
+        <p>
+          Notre plateforme élimine la complexité des tableurs traditionnels en offrant une interface claire,
+          simple et intuitive permettant de saisir vos états financiers et d’obtenir instantanément des indicateurs
+          analytiques utiles.
+        </p>
+        <p>
+          Que vous prépariez une présentation pour des investisseurs, analysiez un concurrent ou souhaitiez mieux
+          suivre votre propre entreprise, RatioTrack vous aide à obtenir une vision plus claire de vos finances.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-8 md:p-10 mb-10">
+      <h2 class="text-2xl font-semibold tracking-tight text-[#1F3A5F] mb-6">
+        Comment analyser les ratios financiers
+      </h2>
+
+      <div class="space-y-5 text-sm md:text-base text-slate-600 leading-relaxed">
+        <p>
+          L’analyse des ratios financiers est une étape essentielle pour comprendre la santé financière d’une entreprise.
+          Que vous soyez entrepreneur, étudiant ou investisseur, savoir interpréter ces indicateurs vous permet de prendre
+          de meilleures décisions.
+        </p>
+
+        <p>
+          Un ratio financier n’a de valeur que dans son contexte. Par exemple, un ratio de liquidité de 2 peut sembler
+          excellent, mais dans certains secteurs où les flux de trésorerie sont rapides, un ratio de 1,2 peut être suffisant.
+          C’est pourquoi l’analyse ne doit jamais se faire de manière isolée.
+        </p>
+
+        <p>
+          Les ratios financiers se divisent généralement en quatre grandes catégories :
+        </p>
+
+        <ul class="list-disc pl-6 space-y-2 text-slate-600 marker:text-slate-400">
+          <li><strong class="text-slate-800">Ratios de liquidité</strong> : mesurent la capacité à payer les obligations à court terme</li>
+          <li><strong class="text-slate-800">Ratios de structure financière</strong> : évaluent le niveau d’endettement et le risque</li>
+          <li><strong class="text-slate-800">Ratios de gestion</strong> : analysent l’efficacité des opérations</li>
+          <li><strong class="text-slate-800">Ratios de rentabilité</strong> : mesurent la capacité à générer du profit</li>
+        </ul>
+
+        <p>
+          Pour bien analyser une entreprise, il est important de comparer les ratios dans le temps, de les comparer
+          à ceux d’entreprises similaires, d’en analyser plusieurs ensemble et de tenir compte du contexte global.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <h3 class="text-sm font-semibold text-[#1F3A5F] mb-2">1. Comparer les ratios dans le temps</h3>
+            <p class="text-sm text-slate-600">
+              Une analyse sur plusieurs périodes permet d’identifier des tendances comme une baisse de rentabilité
+              ou une amélioration graduelle de la structure financière.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <h3 class="text-sm font-semibold text-[#1F3A5F] mb-2">2. Comparer avec le secteur</h3>
+            <p class="text-sm text-slate-600">
+              Les ratios varient beaucoup selon l’industrie. Une entreprise manufacturière et une entreprise de services
+              n’auront pas les mêmes normes.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <h3 class="text-sm font-semibold text-[#1F3A5F] mb-2">3. Analyser plusieurs ratios ensemble</h3>
+            <p class="text-sm text-slate-600">
+              Une entreprise peut être rentable mais manquer de liquidité. Il faut toujours examiner les ratios dans leur ensemble.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <h3 class="text-sm font-semibold text-[#1F3A5F] mb-2">4. Tenir compte du contexte</h3>
+            <p class="text-sm text-slate-600">
+              Une entreprise en croissance peut temporairement afficher des ratios plus faibles sans que cela soit forcément négatif.
+            </p>
+          </div>
+        </div>
+
+        <p class="pt-2">
+          Pour obtenir rapidement ces indicateurs, vous pouvez utiliser une calculatrice de ratios financiers en ligne
+          comme RatioTrack, qui automatise les calculs et facilite l’interprétation.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-8 md:p-10 mb-10">
+      <h2 class="text-2xl font-semibold tracking-tight text-[#1F3A5F] mb-6">
+        Quels ratios financiers utiliser selon votre entreprise
+      </h2>
+
+      <div class="space-y-5 text-sm md:text-base text-slate-600 leading-relaxed">
+        <p>
+          Tous les ratios financiers ne sont pas pertinents dans toutes les situations. Le choix dépend de votre type
+          d’entreprise, de votre secteur et de vos objectifs.
+        </p>
+
+        <div class="space-y-4">
+          <div class="border border-slate-200 rounded-lg p-5">
+            <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">PME et petites entreprises</h3>
+            <p class="text-sm text-slate-600 mb-2">
+              Les entreprises de petite taille doivent prioriser les ratios de liquidité.
+            </p>
+            <ul class="list-disc pl-6 space-y-1 text-sm text-slate-600 marker:text-slate-400">
+              <li>Fonds de roulement</li>
+              <li>Ratio de liquidité immédiate</li>
+            </ul>
+          </div>
+
+          <div class="border border-slate-200 rounded-lg p-5">
+            <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">Entreprises en croissance ou endettées</h3>
+            <p class="text-sm text-slate-600 mb-2">
+              Les ratios de structure financière deviennent prioritaires.
+            </p>
+            <ul class="list-disc pl-6 space-y-1 text-sm text-slate-600 marker:text-slate-400">
+              <li>Ratio d’endettement</li>
+              <li>Ratio d’autonomie financière</li>
+              <li>Ratio de couverture des intérêts</li>
+            </ul>
+          </div>
+
+          <div class="border border-slate-200 rounded-lg p-5">
+            <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">Entreprises commerciales</h3>
+            <p class="text-sm text-slate-600 mb-2">
+              Les ratios de gestion deviennent très importants pour suivre les flux de trésorerie.
+            </p>
+            <ul class="list-disc pl-6 space-y-1 text-sm text-slate-600 marker:text-slate-400">
+              <li>Délai de recouvrement des comptes clients</li>
+              <li>Délai de paiement des fournisseurs</li>
+            </ul>
+          </div>
+
+          <div class="border border-slate-200 rounded-lg p-5">
+            <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">Entreprises axées sur la performance</h3>
+            <p class="text-sm text-slate-600 mb-2">
+              Les ratios de rentabilité permettent d’évaluer l’efficacité globale.
+            </p>
+            <ul class="list-disc pl-6 space-y-1 text-sm text-slate-600 marker:text-slate-400">
+              <li>Marge bénéficiaire brute</li>
+              <li>Résultat net</li>
+              <li>Rendement de l’actif (ROA)</li>
+              <li>Rendement des capitaux propres (ROE)</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          Une bonne pratique consiste à utiliser une calculatrice de ratios financiers gratuite pour analyser rapidement
+          les bons indicateurs sans erreurs de calcul.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-8 md:p-10 mb-10">
+      <h2 class="text-2xl font-semibold tracking-tight text-[#1F3A5F] mb-6">
+        Exemple concret d’analyse de ratios financiers
+      </h2>
+
+      <div class="space-y-5 text-sm md:text-base text-slate-600 leading-relaxed">
+        <p>
+          Prenons un exemple simple pour illustrer l’analyse.
+        </p>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+          <h3 class="text-base font-semibold text-[#1F3A5F] mb-3">Données de l’entreprise</h3>
+          <ul class="list-disc pl-6 space-y-1 text-sm text-slate-600 marker:text-slate-400">
+            <li>Revenus : 500 000 $</li>
+            <li>Coût des marchandises vendues : 300 000 $</li>
+            <li>Résultat net : 60 000 $</li>
+            <li>Actif total : 400 000 $</li>
+            <li>Passif total : 200 000 $</li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border border-slate-200 rounded-lg p-5">
+            <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">Analyse de rentabilité</h3>
+            <ul class="list-disc pl-6 space-y-1 text-sm text-slate-600 marker:text-slate-400">
+              <li>Marge brute : 40 %</li>
+              <li>Marge nette : 12 %</li>
+              <li>ROA : 15 %</li>
+              <li>ROE : 40 %</li>
+            </ul>
+          </div>
+
+          <div class="border border-slate-200 rounded-lg p-5">
+            <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">Analyse financière</h3>
+            <ul class="list-disc pl-6 space-y-1 text-sm text-slate-600 marker:text-slate-400">
+              <li>Ratio d’endettement : 50 %</li>
+              <li>Ratio d’autonomie : 1,33</li>
+              <li>Fonds de roulement : 1,5</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-lg p-5">
+          <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">Conclusion</h3>
+          <p class="text-sm text-slate-600">
+            L’entreprise est rentable, stable et relativement bien gérée, mais elle pourrait encore améliorer
+            la vitesse de recouvrement de ses paiements clients.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-[#1F3A5F] rounded-2xl p-8 md:p-10 text-center text-white shadow-sm">
+      <h2 class="text-2xl font-semibold tracking-tight mb-3">
+        Pourquoi utiliser une calculatrice de ratios financiers ?
+      </h2>
+      <p class="text-sm md:text-base text-slate-200 max-w-2xl mx-auto mb-6 leading-relaxed">
+        Faire ces calculs manuellement peut être long et source d’erreurs. RatioTrack vous permet de calculer
+        instantanément vos ratios, d’éviter les erreurs de formule et d’obtenir une vue claire de la santé
+        financière de votre entreprise.
+      </p>
+      <a href="calculatrice.html" class="inline-flex items-center gap-2 bg-white text-[#1F3A5F] font-medium px-6 py-3 rounded-md hover:bg-slate-100 transition-all">
+        Essayez la calculatrice RatioTrack
+        <iconify-icon icon="solar:arrow-right-linear" stroke-width="1.5"></iconify-icon>
+      </a>
+    </div>
+
+  </div>
+</section>
+<footer class="bg-white border-t border-slate-200 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
+      
+      <div class="flex flex-col items-center md:items-start">
+        <span class="text-lg font-semibold tracking-tighter text-[#1F3A5F] mb-2">
+          RatioTrack
+        </span>
+        <p class="text-xs text-slate-400 max-w-xs text-center md:text-left">
+          Cet outil fournit des informations financières générales et ne doit pas être considéré comme un conseil financier ou en investissement.
+        </p>
+      </div>
+<div class="max-w-4xl mx-auto mt-10 text-center">
+
+  <p class="text-sm text-slate-500 mb-4">
+    Vous voulez aller plus loin dans votre analyse financière ?
+  </p>
+
+  <a href="ratiotrack+.html"
+     class="inline-flex items-center gap-2 bg-[#1F3A5F] text-white text-sm font-medium px-5 py-3 rounded-md hover:opacity-90 transition-all">
+     
+    Passer au prochain niveau🔥
+  </a>
+
+</div>
+
+      <div class="flex gap-8 text-sm">
+
+
+        <!-- PRODUIT -->
+        <div class="flex flex-col gap-2 items-center md:items-start">
+          <span class="font-medium text-slate-800 text-xs tracking-wider uppercase">
+            Produit
+          </span>
+
+          <a href="calculatrice.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Calculatrice
+          </a>
+
+          <a href="guide-ratio-financier.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Guide
+          </a>
+        </div>
+
+        <!-- LÉGAL -->
+        <div class="flex flex-col gap-2 items-center md:items-start">
+          <span class="uppercase text-xs font-medium text-slate-800 tracking-wider">
+            Légal
+          </span>
+
+          <a href="politique-confidentialite.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Politique de confidentialité
+          </a>
+
+          <a href="conditions-utilisation.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Conditions d’utilisation
+          </a>
+
+          <a href="clause-non-responsabilite.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Clause de non-responsabilité
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="text-xs text-slate-400 text-center border-slate-100 border-t mt-10 pt-6">
+      © 2026 RatioTrack. Tous droits réservés.
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60D03M0RFH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-60D03M0RFH');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Calculatrice de ratios financiers | RatioTrack</title>
+<meta name="description" content="Calculatrice de ratios financiers pour analyser la liquidité, la rentabilité et la structure financière d’une entreprise.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+      body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F5F7FA;
+      color: #334155;
+      -webkit-font-smoothing: antialiased;
+      }
+      /* Hide number input spinners */
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      input[type=number] {
+      -moz-appearance: textfield;
+      }
+      @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+      }
+      /* Custom subtle scrollbar for input panel */
+      .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="index.html" class="text-xl font-semibold tracking-tighter text-[#1F3A5F]">
+          RatioTrack
+        </a>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          Accueil
+        </a>
+        <a href="calculatrice.html" class="text-sm text-[#1F3A5F] font-semibold hover:text-[#1F3A5F] transition-colors">
+          Calculatrice
+        </a>
+        <a href="guide-ratio-financier.html" class="text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          Guide
+        </a>
+        <a href="a-propos.html" class="text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          À propos
+        </a>
+        <a href="contact.html" class="text-sm font-medium text-slate-500 hover:text-[#1F3A5F] transition-colors">
+          Contact
+        </a>
+        <a href="ratiotrack+.html" class="nav-btn text-sm hover:text-[#1F3A5F] transition-colors text-[#1F3A5F] font-semibold">
+          RatioTrack +
+        </a>
+<div class="flex items-center bg-slate-100 border border-slate-200 rounded-full px-2 py-1 gap-1">
+  
+  <a href="financial-ratio-calculator.html"
+     class="text-xs px-3 py-1 rounded-full text-slate-500 hover:text-[#1F3A5F] transition">
+    EN
+  </a>
+
+  <a href="calculatrice.html"
+     class="text-xs px-3 py-1 rounded-full bg-white text-[#1F3A5F] shadow-sm font-semibold">
+    FR
+  </a>
+
+</div>
+      </div>
+
+      <div class="flex items-center">
+        <a href="calculatrice.html" class="bg-[#1F3A5F] text-white text-sm font-medium px-4 py-2 rounded-md hover:opacity-90 transition-opacity flex items-center gap-2">
+          <iconify-icon icon="solar:calculator-linear" stroke-width="1.5"></iconify-icon>
+          <span class="hidden sm:inline">Lancez l'application</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div>
+<main class="flex-grow w-full">
+
+  <!-- HEADER -->
+  <div class="text-center max-w-3xl mx-auto mt-10 mb-6 px-4">
+    <h1 class="text-2xl font-semibold text-[#1F3A5F] mb-2">
+      Calculatrice de ratios financiers
+    </h1>
+    <h2 class="text-sm text-slate-500">
+      Analysez la liquidité, la rentabilité et la structure financière de votre entreprise en quelques secondes.
+    </h2>
+  </div>
+
+<!-- 2. CALCULATOR / DASHBOARD -->
+        <div class="max-w-[1400px] mx-auto p-4 sm:p-6 lg:p-8 h-[calc(100vh-64px)] flex flex-col lg:flex-row gap-8">
+          <!-- Left Panel: Inputs -->
+          <div class="w-full lg:w-[400px] flex-shrink-0 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col overflow-hidden h-full max-h-full">
+            <div class="p-5 border-b border-slate-200 bg-slate-50/50 flex justify-between items-center">
+              <h2 class="text-base font-semibold tracking-tight text-[#1F3A5F]">
+                Saisie des données
+              </h2>
+              <button onclick="clearInputs()" class="text-xs font-medium text-slate-500 hover:text-slate-800">
+                Tout effacer
+              </button>
+            </div>
+
+            <div class="p-5 overflow-y-auto custom-scrollbar flex-grow">
+              <form id="ratio-form" onsubmit="event.preventDefault(); calculateRatios();">
+                <!-- Balance Sheet -->
+                <div class="mb-8">
+                  <h3 class="text-sm font-semibold tracking-tight text-slate-800 mb-4 flex items-center gap-2">
+                    <iconify-icon icon="solar:wallet-linear" class="text-slate-400"></iconify-icon>
+                    Bilan
+                  </h3>
+                  <div class="space-y-3">
+                    <div class="flex flex-col gap-1">
+                      <label class="text-xs font-medium text-slate-600">
+                        Encaisse
+                      </label>
+                      <div class="relative">
+                        <span class="absolute left-3 top-2 text-xs text-slate-400">
+                          $
+                        </span>
+                        <input type="number" id="inp-cash" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="text-xs font-medium text-slate-600">
+                        Clients
+                      </label>
+                      <div class="relative">
+                        <span class="absolute left-3 top-2 text-xs text-slate-400">
+                          $
+                        </span>
+                        <input type="number" id="inp-ar" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="text-xs font-medium text-slate-600">
+                        Stocks
+                      </label>
+                      <div class="relative">
+                        <span class="absolute left-3 top-2 text-xs text-slate-400">
+                          $
+                        </span>
+                        <input type="number" id="inp-inv" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-1 pt-2">
+                      <label class="text-xs font-medium text-slate-600">
+                        Total des actifs à court terme
+                      </label>
+                      <div class="relative">
+                        <span class="absolute left-3 top-2 text-xs text-slate-400">
+                          $
+                        </span>
+                        <input type="number" id="inp-tca" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="text-xs font-medium text-slate-600">
+                        Total des actifs
+                      </label>
+                      <div class="relative">
+                        <span class="absolute left-3 top-2 text-xs text-slate-400">
+                          $
+                        </span>
+                        <input type="number" id="inp-ta" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+                      </div>
+                    </div>
+                    <div class="h-px bg-slate-100 my-2"></div>
+                    <div class="flex flex-col gap-1">
+                      <label class="text-xs font-medium text-slate-600">
+                        Total des passifs à court terme
+                      </label>
+                      <div class="relative">
+                        <span class="absolute left-3 top-2 text-xs text-slate-400">
+                          $
+                        </span>
+                        <input type="number" id="inp-tcl" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="text-xs font-medium text-slate-600">
+                        Total des passifs
+                      </label>
+                      <div class="relative">
+                        <span class="absolute left-3 top-2 text-xs text-slate-400">
+                          $
+                        </span>
+                        <input type="number" id="inp-tl" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="text-xs font-medium text-slate-600">
+                        Capitaux propres
+                      </label>
+                      <div class="relative">
+                        <span class="absolute left-3 top-2 text-xs text-slate-400">
+                          $
+                        </span>
+                        <input type="number" id="inp-eq" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+                      </div>
+                    </div>
+<div class="flex flex-col gap-1">
+  <label class="text-xs font-medium text-slate-600">
+    Comptes fournisseurs (AP)
+  </label>
+  <div class="relative">
+    <span class="absolute left-3 top-2 text-xs text-slate-400">
+      $
+    </span>
+    <input type="number" id="inp-ap" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+  </div>
+</div>
+                  </div>
+                </div>
+
+                <!-- Income Statement --> 
+<div>
+  <h3 class="text-sm font-semibold tracking-tight text-slate-800 mb-4 flex items-center gap-2">
+    <iconify-icon icon="solar:document-text-linear" class="text-slate-400"></iconify-icon>
+    État des résultats
+  </h3>
+
+  <div class="space-y-3">
+
+    <!-- Revenus -->
+    <div class="flex flex-col gap-1">
+      <label class="text-xs font-medium text-slate-600">
+        Revenus (ventes)
+      </label>
+      <div class="relative">
+        <span class="absolute left-3 top-2 text-xs text-slate-400">$</span>
+        <input type="number" id="inp-rev" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+      </div>
+    </div>
+<!-- Ventes à crédit -->
+<div class="flex flex-col gap-1">
+  <label class="text-xs font-medium text-slate-600">
+    Ventes à crédit
+  </label>
+  <div class="relative">
+    <span class="absolute left-3 top-2 text-xs text-slate-400">$</span>
+    <input
+      type="number"
+      id="inp-credit-sales"
+      class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300"
+      placeholder="0"
+    >
+  </div>
+</div>
+
+    <!-- COGS -->
+    <div class="flex flex-col gap-1">
+      <label class="text-xs font-medium text-slate-600">
+        Coût des marchandises vendues
+      </label>
+      <div class="relative">
+        <span class="absolute left-3 top-2 text-xs text-slate-400">$</span>
+        <input type="number" id="inp-cogs" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+      </div>
+    </div>
+<!-- Achats à crédit -->
+<div class="flex flex-col gap-1">
+  <label class="text-xs font-medium text-slate-600">
+    Achats à crédit
+  </label>
+  <div class="relative">
+    <span class="absolute left-3 top-2 text-xs text-slate-400">$</span>
+    <input
+      type="number"
+      id="inp-credit-purchases"
+      class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300"
+      placeholder="0"
+    >
+  </div>
+</div>
+
+    <!-- Résultat d’exploitation -->
+    <div class="flex flex-col gap-1">
+      <label class="text-xs font-medium text-slate-600">
+        Résultat d’exploitation (EBIT)
+      </label>
+      <div class="relative">
+        <span class="absolute left-3 top-2 text-xs text-slate-400">$</span>
+        <input type="number" id="inp-op" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+      </div>
+    </div>
+
+    <!-- 🔥 NOUVEAU: Charges d’intérêts -->
+    <div class="flex flex-col gap-1">
+      <label class="text-xs font-medium text-slate-600">
+        Charges d’intérêts
+      </label>
+      <div class="relative">
+        <span class="absolute left-3 top-2 text-xs text-slate-400">$</span>
+        <input type="number" id="inp-interest" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+      </div>
+    </div>
+
+    <!-- Résultat net -->
+    <div class="flex flex-col gap-1">
+      <label class="text-xs font-medium text-slate-600">
+        Résultat net
+      </label>
+      <div class="relative">
+        <span class="absolute left-3 top-2 text-xs text-slate-400">$</span>
+        <input type="number" id="inp-net" class="w-full pl-6 pr-3 py-2 bg-white border border-slate-200 rounded-md text-sm text-slate-800 focus:outline-none focus:border-[#1F3A5F] focus:ring-1 focus:ring-[#1F3A5F] transition-all placeholder:text-slate-300" placeholder="0">
+      </div>
+    </div>
+
+  </div>
+</div>
+</form>
+</div>
+
+            <div class="p-5 border-t border-slate-200 bg-white">
+              <button type="button" onclick="calculateRatios()" class="w-full bg-[#1F3A5F] text-white text-sm font-medium py-2.5 rounded-md hover:opacity-90 transition-opacity flex justify-center items-center gap-2">
+                <iconify-icon icon="solar:magic-stick-3-linear"></iconify-icon>
+                Calculez les ratios financiers
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Panel: Results Dashboard -->
+          <div class="flex-grow bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col h-full max-h-full">
+            <div class="p-5 border-b border-slate-200 bg-slate-50/50 flex justify-between items-center">
+              <h2 class="text-base font-semibold tracking-tight text-[#1F3A5F]">
+                Résultat de l'analyse des ratios
+              </h2>
+              <div class="flex items-center gap-3">
+<p class="text-xs text-slate-400">
+  (Les indicateurs visuels sont fournis à titre indicatif seulement et doivent être interprétés selon le secteur d’activité et le contexte de l’entreprise.)
+</p>
+                <span class="flex items-center gap-1 text-[10px] text-slate-500 uppercase font-semibold tracking-wider">
+                  <span class="w-2 h-2 rounded-full bg-[#2ECC71]"></span>
+                  Fort
+                </span>
+                <span class="flex items-center gap-1 text-[10px] text-slate-500 uppercase font-semibold tracking-wider">
+                  <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+                  Neutre
+                </span>
+                <span class="flex items-center gap-1 text-[10px] text-slate-500 uppercase font-semibold tracking-wider">
+                  <span class="w-2 h-2 rounded-full bg-[#E74C3C]"></span>
+                  Risque
+                </span>
+
+              </div>
+            </div>
+
+            <div class="p-6 overflow-y-auto custom-scrollbar flex-grow">
+              <!-- Empty State -->
+              <div id="empty-state" class="h-full flex flex-col items-center justify-center text-center px-4">
+                <div class="h-16 w-16 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-center text-slate-300 mb-4">
+                  <iconify-icon icon="solar:pie-chart-2-linear" class="text-3xl"></iconify-icon>
+                </div>
+                <h3 class="text-base font-semibold tracking-tight text-[#1F3A5F] mb-1">
+                  Aucune donnée analysée
+                </h3>
+                <p class="text-sm text-slate-500 max-w-sm">
+                  Entrez vos états financiers dans l'interface de gauche et
+                  calculez pour voir les ratios financiers
+                </p>
+              </div>
+
+              <!-- Results Grid (Hidden by default) -->
+              <div id="results-grid" class="hidden">
+                <!-- Liquidity Section -->
+                <div class="mb-8">
+                  <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4 border-b border-slate-100 pb-2">
+                    Ratios de liquidité
+                  </h4>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Working Capital Ratio -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Ratio de fonds de roulement
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-current" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          0.00x
+                        </div>
+                        <div id="ind-current" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Mesure la capacité à couvrir les obligations à court terme avec les actifs à court terme.
+                      </p>
+                    </div>
+                    <!-- Quick Ratio -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Ratio de liquidité immédiate
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-quick" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          0.00x
+                        </div>
+                        <div id="ind-quick" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Mesure la capacité à faire face aux obligations à court terme à l’aide des actifs les plus liquides.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Leverage Section -->
+                <div class="mb-8">
+                  <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4 border-b border-slate-100 pb-2">
+                    Ratios de structure financière
+                  </h4>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Debt Ratio -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Ratio d'endettement
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-debt" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          0.00
+                        </div>
+                        <div id="ind-debt" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Proportion des actifs d’une entreprise financés par la dette.
+                      </p>
+                    </div>
+                    <!-- Debt-to-Equity -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Ratio d'autonomie financière
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-debteq" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          0.00
+                        </div>
+                        <div id="ind-debteq" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Évalue l’effet de levier financier en comparant le total des passifs aux capitaux propres.
+                      </p>
+                    </div>
+                    <!-- Equity Multiplier -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Ratio d'effet de levier
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-eqmult" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          --
+                        </div>
+<div id="ind-eqmult" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Indique dans quelle mesure les actifs d’une entreprise sont financés par les capitaux propres par rapport à la dette.
+                      </p>
+                    </div>
+                    <!-- Interest Coverage Ratio -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Ratio de la couverture des intérêts
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-intcov" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          --
+                        </div>
+<div id="ind-intcov" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Mesure la capacité d’une entreprise à payer les intérêts sur sa dette en cours.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Efficiency Section -->
+                <div class="mb-8">
+                  <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4 border-b border-slate-100 pb-2">
+                    Ratios de gestion
+                  </h4>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Accounts Receivable Collection Period -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Délai moyen de recouvrement comptes clients
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-ar-col" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          --
+                        </div>
+<div id="ind-ar-col" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Indique le nombre moyen de jours nécessaires pour encaisser les paiements des clients.
+                      </p>
+                    </div>
+                    <!-- Accounts Payable Payment Period -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Délai moyen de paiement comptes fournisseurs
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-ap-pay" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          --
+                        </div>
+<div id="ind-ap-pay" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Mesure le nombre moyen de jours qu’une entreprise met à payer ses fournisseurs.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Profitability Section -->
+                <div>
+                  <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4 border-b border-slate-100 pb-2">
+                    Ratios de rentabilité
+                  </h4>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Gross Profit Margin -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Marge bénéficiaire brute
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-gross" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          0.0%
+                        </div>
+                        <div id="ind-gross" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Pourcentage des revenus conservés après déduction du coût des marchandises vendues.
+                      </p>
+                    </div>
+                    <!-- Net Profit Margin -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Marge nette
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-netm" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          0.0%
+                        </div>
+                        <div id="ind-netm" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Pourcentage des revenus restant en profit après déduction de toutes les dépenses.
+                      </p>
+                    </div>
+                    <!-- Return on Assets -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Rendement de l'actif total
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+  <div id="res-roa" class="text-3xl font-semibold tracking-tight text-slate-800">
+    0.0%
+  </div>
+  <div id="ind-roa" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+</div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Indique dans quelle mesure une entreprise utilise efficacement ses actifs pour générer des profits.
+                      </p>
+                    </div>
+                    <!-- Return on Equity -->
+                    <div class="border border-slate-200 rounded-lg p-5 hover:border-slate-300 transition-colors bg-slate-50/30">
+                      <div class="text-sm font-medium text-slate-600 mb-2">
+                        Rendement du capital
+                      </div>
+                      <div class="flex items-end gap-2 mb-3">
+                        <div id="res-roe" class="text-3xl font-semibold tracking-tight text-slate-800">
+                          0.0%
+                        </div>
+<div id="ind-roe" class="w-2 h-2 rounded-full bg-slate-300 mb-2"></div>
+                      </div>
+                      <p class="text-xs text-slate-500 leading-relaxed">
+                        Mesure la rentabilité par rapport aux capitaux propres.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-16">
+  <div class="bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-10">
+    
+    <!-- Titre -->
+    <div class="max-w-3xl mx-auto text-center mb-10">
+      <h2 class="text-2xl font-semibold tracking-tight text-[#1F3A5F] mb-3">
+        Calculatrice de ratios financiers : comprendre et analyser votre entreprise
+      </h2>
+      <p class="text-sm md:text-base text-slate-500 leading-relaxed">
+        Utilisez cette calculatrice pour analyser rapidement la liquidité, la rentabilité,
+        la structure financière et la performance globale de votre entreprise.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+        <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+          Analyse financière rapide
+        </h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Entrez vos données financières pour calculer instantanément les ratios
+          essentiels comme la liquidité, la structure financière et la rentabilité.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+        <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+          Indicateurs clés
+        </h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Obtenez des indicateurs fiables pour évaluer la santé financière de
+          votre entreprise et comparer vos performances.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+        <h3 class="text-base font-semibold text-[#1F3A5F] mb-2">
+          Prise de décision
+        </h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Interprétez vos ratios financiers pour identifier les forces,
+          les risques et améliorer la gestion de votre entreprise.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Texte SEO discret -->
+    <div class="max-w-3xl mx-auto text-center space-y-4">
+      <p class="text-sm text-slate-500 leading-relaxed">
+        Les ratios financiers sont des outils essentiels pour analyser la performance
+        d’une entreprise. Cette calculatrice vous permet de calculer rapidement des ratios
+        de liquidité, de rentabilité et de structure financière à partir de vos états financiers.
+      </p>
+
+      <p class="text-sm text-slate-500 leading-relaxed">
+        Que vous soyez entrepreneur, étudiant ou analyste, cet outil vous aide à mieux
+        comprendre vos résultats financiers et à prendre des décisions éclairées sans utiliser de tableurs complexes.
+      </p>
+<div class="flex justify-center mt-12">
+  <div class="flex flex-col sm:flex-row gap-4">
+
+    <!-- Bouton secondaire -->
+    <a href="guide-ratio-financier.html"
+       class="w-[240px] border border-slate-300 text-slate-700 text-sm font-medium py-3 rounded-md hover:bg-slate-50 transition-all flex items-center justify-center">
+       
+      En savoir plus dans le guide
+
+    </a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="bg-white border-t border-slate-200 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
+      
+      <div class="flex flex-col items-center md:items-start">
+        <span class="text-lg font-semibold tracking-tighter text-[#1F3A5F] mb-2">
+          RatioTrack
+        </span>
+        <p class="text-xs text-slate-400 max-w-xs text-center md:text-left">
+          Cet outil fournit des informations financières générales et ne doit pas être considéré comme un conseil financier ou en investissement.
+        </p>
+      </div>
+<div class="max-w-4xl mx-auto mt-10 text-center">
+
+  <p class="text-sm text-slate-500 mb-4">
+    Vous voulez aller plus loin dans votre analyse financière ?
+  </p>
+
+  <a href="ratiotrack+.html"
+     class="inline-flex items-center gap-2 bg-[#1F3A5F] text-white text-sm font-medium px-5 py-3 rounded-md hover:opacity-90 transition-all">
+     
+    Passer au prochain niveau🔥
+  </a>
+
+</div>
+
+      <div class="flex gap-8 text-sm">
+
+
+        <!-- PRODUIT -->
+        <div class="flex flex-col gap-2 items-center md:items-start">
+          <span class="font-medium text-slate-800 text-xs tracking-wider uppercase">
+            Produit
+          </span>
+
+          <a href="calculatrice.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Calculatrice
+          </a>
+
+          <a href="guide-ratio-financier.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Guide
+          </a>
+        </div>
+
+        <!-- LÉGAL -->
+        <div class="flex flex-col gap-2 items-center md:items-start">
+          <span class="uppercase text-xs font-medium text-slate-800 tracking-wider">
+            Légal
+          </span>
+
+          <a href="politique-confidentialite.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Politique de confidentialité
+          </a>
+
+          <a href="conditions-utilisation.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Conditions d’utilisation
+          </a>
+
+          <a href="clause-non-responsabilite.html" class="text-slate-500 hover:text-[#1F3A5F]">
+            Clause de non-responsabilité
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="text-xs text-slate-400 text-center border-slate-100 border-t mt-10 pt-6">
+      © 2026 RatioTrack. Tous droits réservés.
+    </div>
+  </div>
+</footer>
+<!-- Modal RatioTrack+ -->
+<div
+  id="ratiotrack-plus-modal"
+  class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-900/60 px-4"
+>
+  <div class="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl border border-slate-200 p-8 md:p-10">
+    
+    <!-- Bouton fermer -->
+    <button
+      type="button"
+      onclick="closePlusModal()"
+      class="absolute top-4 right-4 h-10 w-10 rounded-full border border-slate-200 text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition flex items-center justify-center"
+      aria-label="Fermer"
+    >
+      ✕
+    </button>
+
+    <div class="text-center">
+      <div class="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-slate-50 border border-slate-200 text-[#1F3A5F] mb-5">
+        <iconify-icon icon="solar:star-linear" class="text-2xl"></iconify-icon>
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-[#1F3A5F] mb-3">
+        Passez au prochain niveau avec RatioTrack+
+      </h2>
+
+      <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-6 max-w-md mx-auto">
+        Débloquez une analyse plus avancée, des fonctionnalités supplémentaires et une expérience encore plus complète pour vos ratios financiers.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a
+          href="ratiotrack+.html"
+          class="inline-flex items-center justify-center bg-[#1F3A5F] text-white text-sm font-medium px-6 py-3 rounded-md hover:opacity-90 transition-all"
+        >
+          Découvrir RatioTrack+
+        </a>
+
+        <button
+          type="button"
+          onclick="closePlusModal()"
+          class="inline-flex items-center justify-center border border-slate-300 text-slate-700 text-sm font-medium px-6 py-3 rounded-md hover:bg-slate-50 transition-all"
+        >
+          Continuer gratuitement
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function getVal(id) {
+    const el = document.getElementById(id);
+    if (!el) return 0;
+    const val = parseFloat(el.value);
+    return isNaN(val) ? 0 : val;
+  }
+
+  function setHTML(id, html) {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = html;
+  }
+
+  function setIndicator(id, value, goodThreshold, badThreshold, higherIsBetter = true) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    el.className = 'w-2 h-2 rounded-full mb-2';
+
+    if (higherIsBetter) {
+      if (value >= goodThreshold) el.classList.add('bg-[#2ECC71]');
+      else if (value <= badThreshold) el.classList.add('bg-[#E74C3C]');
+      else el.classList.add('bg-slate-300');
+    } else {
+      if (value <= goodThreshold) el.classList.add('bg-[#2ECC71]');
+      else if (value >= badThreshold) el.classList.add('bg-[#E74C3C]');
+      else el.classList.add('bg-slate-300');
+    }
+  }
+
+  function clearInputs() {
+    const form = document.getElementById('ratio-form');
+    if (form) form.reset();
+
+    const emptyState = document.getElementById('empty-state');
+    const resultsGrid = document.getElementById('results-grid');
+
+    if (emptyState) emptyState.classList.remove('hidden');
+    if (resultsGrid) resultsGrid.classList.add('hidden');
+
+    setHTML('res-current', '0.00x');
+    setHTML('res-quick', '0.00x');
+    setHTML('res-debt', '0.00');
+    setHTML('res-debteq', '0.00');
+    setHTML('res-eqmult', '--');
+    setHTML('res-intcov', '--');
+    setHTML('res-ar-col', '--');
+    setHTML('res-ap-pay', '--');
+    setHTML('res-gross', '0.0%');
+    setHTML('res-netm', '0.0%');
+    setHTML('res-roa', '0.0%');
+    setHTML('res-roe', '0.0%');
+
+    ['ind-current', 'ind-quick', 'ind-debt', 'ind-debteq', 'ind-gross', 'ind-netm', 'ind-roa', 'ind-roe', 'ind-eqmult', 'ind-intcov', 'ind-ar-col', 'ind-ap-pay'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.className = 'w-2 h-2 rounded-full bg-slate-300 mb-2';
+    });
+  }
+
+  function calculateRatios() {
+    const cash = getVal('inp-cash');
+    const ar = getVal('inp-ar');
+    const tca = getVal('inp-tca');
+    const ta = getVal('inp-ta');
+    const tcl = getVal('inp-tcl');
+    const tl = getVal('inp-tl');
+    const eq = getVal('inp-eq');
+const ap = getVal('inp-ap');
+    const rev = getVal('inp-rev');
+const creditSales = getVal('inp-credit-sales');
+    const cogs = getVal('inp-cogs');
+const creditPurchases = getVal('inp-credit-purchases');
+    const net = getVal('inp-net');
+const op = getVal('inp-op');
+const interest = getVal('inp-interest');
+    const emptyState = document.getElementById('empty-state');
+    const resultsGrid = document.getElementById('results-grid');
+
+    if (emptyState) emptyState.classList.add('hidden');
+    if (resultsGrid) resultsGrid.classList.remove('hidden');
+
+    let currentRatio = tcl > 0 ? tca / tcl : 0;
+    setHTML('res-current', tcl > 0 ? currentRatio.toFixed(2) + 'x' : '--');
+    setIndicator('ind-current', currentRatio, 1.5, 1.0, true);
+
+    let quickRatio = tcl > 0 ? (cash + ar) / tcl : 0;
+    setHTML('res-quick', tcl > 0 ? quickRatio.toFixed(2) + 'x' : '--');
+    setIndicator('ind-quick', quickRatio, 1.0, 0.8, true);
+
+    let grossMargin = rev > 0 ? ((rev - cogs) / rev) * 100 : 0;
+    setHTML('res-gross', rev > 0 ? grossMargin.toFixed(1) + '%' : '--');
+    setIndicator('ind-gross', grossMargin, 40, 20, true);
+
+    let netMargin = rev > 0 ? (net / rev) * 100 : 0;
+    setHTML('res-netm', rev > 0 ? netMargin.toFixed(1) + '%' : '--');
+    setIndicator('ind-netm', netMargin, 15, 5, true);
+
+    let roa = ta > 0 ? (net / ta) * 100 : 0;
+    setHTML('res-roa', ta > 0 ? roa.toFixed(1) + '%' : '--');
+
+    let roe = eq > 0 ? (net / eq) * 100 : 0;
+    setHTML('res-roe', eq > 0 ? roe.toFixed(1) + '%' : '--');
+
+    let debtRatio = ta > 0 ? tl / ta : 0;
+    setHTML('res-debt', ta > 0 ? debtRatio.toFixed(2) : '--');
+    setIndicator('ind-debt', debtRatio, 0.4, 0.6, false);
+
+    let debtEq = eq > 0 ? tl / eq : 0;
+    setHTML('res-debteq', eq > 0 ? debtEq.toFixed(2) : '--');
+    setIndicator('ind-debteq', debtEq, 1.0, 2.0, false);
+
+    let eqMult = eq > 0 ? ta / eq : 0;
+    setHTML('res-eqmult', eq > 0 ? eqMult.toFixed(2) : '--');
+
+let interestCoverage = interest > 0 ? op / interest : 0;
+setHTML('res-intcov', interest > 0 ? interestCoverage.toFixed(2) + 'x' : '--');
+
+let arBase = creditSales > 0 ? creditSales : rev > 0 ? rev : null;
+let arDays = arBase > 0 && ar > 0 ? (ar / arBase) * 365 : null;
+setHTML('res-ar-col', arDays !== null ? arDays.toFixed(0) + ' jours' : '--');
+
+let apDays = creditPurchases > 0 ? (ap / creditPurchases) * 365 : null;
+setHTML('res-ap-pay', apDays !== null ? apDays.toFixed(0) + ' jours' : '--');
+
+setIndicator('ind-roa', roa, 10, 3, true);
+setIndicator('ind-roe', roe, 15, 5, true);
+setIndicator('ind-eqmult', eqMult, 2, 4, false);
+setIndicator('ind-intcov', interestCoverage, 5, 1.5, true);
+setIndicator('ind-ar-col', arDays ?? 0, 45, 90, false);
+setIndicator('ind-ap-pay', apDays ?? 0, 30, 90, false);
+const hasRealInput =
+  cash > 0 || ar > 0 || tca > 0 || ta > 0 || tcl > 0 || tl > 0 ||
+  eq > 0 || ap > 0 || rev > 0 || creditSales > 0 || cogs > 0 ||creditPurchases > 0 ||
+  net > 0 || op > 0 || interest > 0;
+if (
+  hasRealInput &&
+  shouldShowPlusModal() &&
+  sessionStorage.getItem('ratiotrackPlusModalSeenThisSession') !== 'true'
+) {
+  setTimeout(() => {
+    openPlusModal();
+    markPlusModalSeenWithoutDismiss();
+  }, 500);
+}
+  }
+function shouldShowPlusModal() {
+  return sessionStorage.getItem('ratiotrackPlusModalDismissed') !== 'true';
+}
+
+function openPlusModal() {
+  if (!shouldShowPlusModal()) return;
+
+  const modal = document.getElementById('ratiotrack-plus-modal');
+  if (!modal) return;
+
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.classList.add('overflow-hidden');
+}
+
+function closePlusModal() {
+  const modal = document.getElementById('ratiotrack-plus-modal');
+  if (!modal) return;
+
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+  document.body.classList.remove('overflow-hidden');
+
+  sessionStorage.setItem('ratiotrackPlusModalDismissed', 'true');
+}
+
+function markPlusModalSeenWithoutDismiss() {
+  sessionStorage.setItem('ratiotrackPlusModalSeenThisSession', 'true');
+  }
+</script>
+</body>
+</html>
